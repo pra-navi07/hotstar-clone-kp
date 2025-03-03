@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotstar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scrollbar-width: none;
+        /* background-color: #000000; */
+      }
+      body {
+        background-color: black;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background-color:#000000;
+      }
+      .nav {
+        width: 5vw;
+        height: 100vh;
+        background-color: rgba(18, 16, 16, 0.833);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .nav:hover {
+        cursor: pointer;
+      }
+      .starlogo {
+        margin-bottom: 80px;
+      }
+      .starlogo:hover {
+        cursor: pointer;
+      }
+      i {
+        color: rgba(255, 255, 255, 0.674);
+        font-size: 21px;
+        padding: 15px;
+        padding-left: 5px;
+      }
+      i:hover {
+        cursor: pointer;
+        color: white;
+      }
+      .mainbox {
+        width: 90vw;
+        min-height: 100vh;
+        /* background-color: rgb(0, 0, 0); */
+        float: right;
+      }
+      .sec-1 {
+        margin: auto;
+        height: 320px;
+        /* height: auto; */
+        /* background-color: red; */
+        margin-top: 10px;
+        display: flex;
+      }
+      .daredevil {
+        width: 580px;
+        border-radius: 15px;
+        margin-left: 30px;
+      }
+      .text-dd {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 60px;
+        margin-bottom: 150px;
+        color: white;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        cursor: pointer;
+      }
+      .dp1 {
+        margin-top: 15px;
+        position: relative;
+        bottom: 10px;
+      }
+      .dp2 {
+        /* margin-top: 15px; */
+        color: rgba(255, 255, 255, 0.626);
+        position: relative;
+        bottom: 5px;
+      }
+      .dp3 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        margin-top: 110px;
+        margin-left: -200px;
+        color: white;
+        font-weight: 300;
+      }
+      .dp4 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        margin-top: 140px;
+        margin-left: -292px;
+        font-weight: 400;
+      }
+      .jiol {
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .trailer {
+        border: none;
+        font-size: 25px;
+        padding: 10px;
+        width: 120px;
+        border-radius: 15px;
+        background-color: #383c52;
+        margin-top: 400px;
+        margin-left: -170px;
+        color: rgba(255, 255, 255, 0.954);
+      }
+      .trailer:hover {
+        cursor: pointer;
+        background-color: #2a2d3d;
+      }
+      .scroll{
+        width: 350px;
+            height: 60px;
+            padding: 10px;
+            display: flex;
+            overflow: scroll;
+            gap: 10px;
+            margin-left: 700px;
+            margin-top: -40px;
+      }
+      .sc{
+        border-radius: 5px;
+        transition: 0.4s all ease;
+      }
+      .sc:hover{
+        scale: 1.2;
+        cursor: pointer;
+      }
+      .sec-2 {
+        margin-top: 10px;
+        min-height: 90vh;
+        /* height: auto; */
+      }
+      .laucf-text {
+        width: 90vw;
+        min-height: 300px;
+        padding: 23px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        bottom: 370px;
+        background: linear-gradient(to bottom, transparent, #00000000, #000000);
+      }
+      .lfchef {
+        width: 100%;
+        position: sticky;
+        top: 0;
+      }
+      .byline {
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .sec2-para {
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.879);
+        font-size: 20px;
+      }
+      .sec2-para2 {
+        color: rgba(255, 255, 255, 0.879);
+        font-size: 20px;
+        /* position: relative;
+        bottom: px; */
+        margin-bottom: 10px;
+      }
+      .comedy {
+        color: white;
+        font-size: 20px;
+        /* position: relative;
+        bottom: 42px; */
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+      .watch {
+        border: none;
+        font-size: 20px;
+        color: white;
+        padding: 7px;
+        width: 440px;
+        background: #009fff;
+        background: -webkit-linear-gradient(to left, #ec2f4b, #009fff);
+        background: linear-gradient(to left, #ec2f4b, #009fff);
+        border-radius: 7px;
+        cursor: pointer;
+      }
+      .sec-3 {
+        width: 100%;
+        min-height: 250px;
+        background-color: black;
+        padding: 25px;
+        position: relative;
+        bottom: 370px;
+      }
+      .lr {
+        font-size: 25px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        color: white;
+        position: relative;
+        bottom: 20px;
+      }
+      .latestR {
+        overflow: scroll;
+        display: flex;
+        gap: 15px;
+        padding: 10px;
+        position: relative;
+        bottom: 25px;
+      }
+      .std {
+        overflow: scroll;
+        display: flex;
+        gap: 15px;
+        padding: 2px;
+        position: relative;
+        bottom: 25px;
+      }
+      .m1{
+        border-radius: 15px;
+        padding: 10px;
+        border: none;
+      }
+      .m1:hover{
+        scale: 1.1;
+        cursor: pointer;
+        transition: 0.4s all ease;
+      }
+      .studio{
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .studio:hover{
+        scale: 1.1;
+        cursor: pointer;
+        transition: 0.4s all ease;
+      }
+      .m2,.m3,.lang,.news{
+        border-radius: 15px;
+        padding: 10px;
+        border: none;
+      }
+      .m2:hover{
+        scale: 1.1;
+        cursor: pointer;
+        transition: 0.4s all ease;
+      }
+      .m3:hover{
+        scale: 1.1;
+        cursor: pointer;
+        transition: 0.4s all ease;
+      }
+      .lang:hover{
+        scale: 1.1;
+        cursor: pointer;
+        transition: 0.4s all ease;
+      }
+
+      .news:hover{
+        scale: 1.1;
+        cursor: pointer;
+        transition: 0.4s all ease;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- navbar -->
+      <nav class="nav">
+        <img src="staremoj.png" alt="" width="60px" class="starlogo" />
+        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-tv"></i>
+        <i class="fa-solid fa-cookie"></i>
+        <i class="fa-solid fa-person-running"></i>
+        <i class="fa-solid fa-video"></i>
+        <i class="fa-solid fa-list"></i>
+        <i class="fa-solid fa-circle-user"></i>
+      </nav>
+      <div class="mainbox">
+        <div class="sec-1">
+          <img src="daredevil.png" alt="" class="daredevil" />
+          <div class="text-dd">
+            <img src="jiohs.png" alt="" width="55px" class="jiol" />
+            <div class="para-dd">
+              <p class="dp1">Daredevil</p>
+              <p class="dp2">Streaming from March 5</p>
+            </div>
+            <p class="dp3">Daredevil's secret life is on the line in this</p>
+            <p class="dp4">superhero drama!</p>
+            <button class="trailer">Trailer</button>
+          </div>
+        </div>
+        <!-- section-2  -->
+        <div class="sec-2">
+          <img src="lchs.png" alt="" class="lfchef" />
+          <div class="laucf-text">
+            <img src="lslogo.png" alt="" width="210px" />
+            <b class="byline">2025 . U/A 13+ . Hindi</b>
+
+            <p class="sec2-para">
+              Culinary comedy returns! Hilarious cooks compete for
+            </p>
+            <p class="sec2-para2">top prize.</p>
+
+            <b class="comedy">Comedy</b>
+            <button class="watch">Watch Now</button>
+            <div class="scroll">
+              <img src="sc1.png" alt="" height="40px" class="sc">
+              <img src="sc2.png" alt="" height="40px" class="sc">
+              <img src="sc3.png" alt="" height="40px" class="sc">
+              <img src="sc4.png" alt="" height="40px" class="sc">
+              <img src="sc5.png" alt="" height="40px" class="sc">
+              <img src="sc3.png" alt="" height="40px" class="sc">
+          </div>
+          </div>
+        </div>
+        <!-- section-3  -->
+        <div class="sec-3">
+          <h5 class="lr">Latest Releases</h5>
+          <div class="latestR">
+            <img src="hs1.png" alt="" height="300px" class="m1" />
+            <img src="hs2.png" alt="" height="290px" class="m1" />
+            <img src="hs3.png" alt="" height="290px" class="m1"/>
+            <img src="hs4.png" alt="" height="290px" class="m1" />
+            <img src="hs5.png" alt="" height="290px" class="m1" />
+            <img src="hs6.png" alt="" height="290px" class="m1" />
+            <img src="hs7.png" alt="" height="290px" class="m1" />
+            <img src="hs8.png" alt="" height="290px" class="m1" />
+          </div>
+          <h5 class="lr">Studios</h5>
+          <div class="std">
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5598/1739441155598-a"
+              alt=""
+              height="200px"
+              class="studio"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5223/1535223-a-292dbf42783d"
+              alt=""
+              height="200px"
+              class="studio"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5731/1739780835731-a"
+              alt=""
+              height="200px"
+              class="studio"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7816/1739359307816-a"
+              alt=""
+              height="200px"
+              class="studio"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/583/1739358280583-a"
+              alt=""
+              height="200px"
+              class="studio"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5224/1535224-a-1d1cfe20ffa3"
+              alt=""
+              height="200px"
+              class="studio"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5226/1535226-a-3080287f77cd"
+              alt=""
+              height="200px"
+              class="studio"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5228/1535228-a-fb6607a8214c"
+              alt=""
+              height="200px"
+              class="studio"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5225/1535225-a-58f3d258b91e"
+              alt=""
+              height="200px"
+              class="studio"
+            />
+          </div>
+
+          <h5 class="lr">Peacock's Finest</h5>
+          <div class="latestR">
+            <img src="pec1.png" alt="" width="200px" class="m2"/>
+            <img src="pec2.png" alt="" width="200px" class="m2"/>
+            <img src="pec3.png" alt="" width="200px" class="m2" />
+            <img src="pec4.png" alt=""width="200px" class="m2" />
+            <img src="pec5.png" alt="" width="200px" class="m2" />
+            <img src="pec6.png" alt=""width="200px" class="m2" />
+            <img src="pec7.png" alt="" width="200px" class="m2"/>
+            <img src="pec8.png" alt="" width="200px" class="m2" />
+          </div>
+          <h5 class="lr">Action Extravanganza</h5>
+          <div class="latestR">
+            <img src="act1.png" alt="" height="290px" class="m3" />
+            <img src="act2.png" alt="" height="290px"class="m3" />
+            <img src="act3.png" alt="" height="290px"class="m3" />
+            <img src="act4.png" alt="" height="290px" class="m3"/>
+            <img src="act5.png" alt="" height="290px" class="m3"/>
+            <img src="act6.png" alt="" height="290px"class="m3" />
+            <img src="act7.png" alt="" height="290px"class="m3" />
+            <img src="act8.png" alt="" height="290px"class="m3" />
+          </div>
+          <h5 class="lr">Popular Languages</h5>
+          <div class="latestR">
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6660/1526660-a-afdd1ecfd8ae"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6661/1526661-a-00b818b5bc0e"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6682/1526682-a-fd4e220ba563"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6685/1526685-a-5f5995a53f61"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/6668/1526668-a-ed367d61302a"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6660/1526660-a-afdd1ecfd8ae"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6661/1526661-a-00b818b5bc0e"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6682/1526682-a-fd4e220ba563"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6685/1526685-a-5f5995a53f61"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+            <img
+              src="https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/6668/1526668-a-ed367d61302a"
+              alt=""
+              height="200px"
+              class="lang"
+            />
+          </div>
+          <h5 class="lr">Live News</h5>
+          <div class="latestR">
+            <img src="new1.png" alt="" height="200px" class="news" />
+            <img src="new2.png" alt="" height="200px" class="news" />
+            <img src="new3.png" alt="" height="200px" class="news" />
+            <img src="new4.png" alt="" height="200px" class="news" />
+            <img src="new5.png" alt="" height="200px" class="news" />
+            <img src="new2.png" alt="" height="200px" class="news" />
+            <img src="new3.png" alt="" height="200px" class="news" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
