@@ -25,12 +25,12 @@
       .container {
         width: 100%;
         height: 100vh;
-        background-color:#000000;
+        background-color: #000000;
       }
       .nav {
-        width: 5vw;
+        width: 10vw;
         height: 100vh;
-        background-color: rgba(18, 16, 16, 0.833);
+        /* background-color: rgba(18, 16, 16, 0.833); */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -38,11 +38,13 @@
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 40;
       }
       .nav:hover {
         cursor: pointer;
       }
       .starlogo {
+        margin-left: 10px;
         margin-bottom: 80px;
       }
       .starlogo:hover {
@@ -50,9 +52,9 @@
       }
       i {
         color: rgba(255, 255, 255, 0.674);
-        font-size: 21px;
-        padding: 15px;
-        padding-left: 5px;
+        font-size: 18px;
+        /* padding: 10px; */
+        padding-left: 30px;
       }
       i:hover {
         cursor: pointer;
@@ -130,21 +132,21 @@
         cursor: pointer;
         background-color: #2a2d3d;
       }
-      .scroll{
+      .scroll {
         width: 350px;
-            height: 60px;
-            padding: 10px;
-            display: flex;
-            overflow: scroll;
-            gap: 10px;
-            margin-left: 700px;
-            margin-top: -40px;
+        height: 60px;
+        padding: 10px;
+        display: flex;
+        overflow: scroll;
+        gap: 10px;
+        margin-left: 700px;
+        margin-top: -40px;
       }
-      .sc{
+      .sc {
         border-radius: 5px;
         transition: 0.4s all ease;
       }
-      .sc:hover{
+      .sc:hover {
         scale: 1.2;
         cursor: pointer;
       }
@@ -237,67 +239,142 @@
         position: relative;
         bottom: 25px;
       }
-      .m1{
+      .m1 {
         border-radius: 15px;
         padding: 10px;
         border: none;
       }
-      .m1:hover{
+      .m1:hover {
         scale: 1.1;
         cursor: pointer;
         transition: 0.4s all ease;
       }
-      .studio{
+      .studio {
         padding: 20px;
         border-radius: 10px;
       }
-      .studio:hover{
+      .studio:hover {
         scale: 1.1;
         cursor: pointer;
         transition: 0.4s all ease;
       }
-      .m2,.m3,.lang,.news{
+      .m2,
+      .m3,
+      .lang,
+      .news {
         border-radius: 15px;
         padding: 10px;
         border: none;
       }
-      .m2:hover{
+      .m2:hover {
         scale: 1.1;
         cursor: pointer;
         transition: 0.4s all ease;
       }
-      .m3:hover{
+      .m3:hover {
         scale: 1.1;
         cursor: pointer;
         transition: 0.4s all ease;
       }
-      .lang:hover{
-        scale: 1.1;
-        cursor: pointer;
-        transition: 0.4s all ease;
-      }
-
-      .news:hover{
+      .lang:hover {
         scale: 1.1;
         cursor: pointer;
         transition: 0.4s all ease;
       }
 
+      .news:hover {
+        scale: 1.1;
+        cursor: pointer;
+        transition: 0.4s all ease;
+      }
+      .icons {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 40px;
+        font-size: 10px;
+        /* padding-left: 10px; */
+      }
+      .icon-text {
+        display: flex;
+        gap: 15px;
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.674);
+      }
+      /* .icon-text:hover{
+        color: white;
+      } */
+      .para-N {
+        opacity: 0;
+        transition: 0.4s all ease;
+        /* color: white; */
+      }
+      .icons:hover {
+        /* .para-N {
+          opacity: 1;
+        } */
+        .icon-text:hover {
+          color: white;
+        }
+      }
+      .nav-hov:hover{
+        background: linear-gradient(-webkit-linear-gradient(to left,#000000,#000000,transparent););
+        cursor: pointer;
+        .icons i{
+          color: white;
+        }
+        .para-N{
+          color: white;
+        }
+        .para-N {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <!-- navbar -->
       <nav class="nav">
-        <img src="staremoj.png" alt="" width="60px" class="starlogo" />
-        <i class="fa-solid fa-house"></i>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <i class="fa-solid fa-tv"></i>
-        <i class="fa-solid fa-cookie"></i>
-        <i class="fa-solid fa-person-running"></i>
-        <i class="fa-solid fa-video"></i>
-        <i class="fa-solid fa-list"></i>
-        <i class="fa-solid fa-circle-user"></i>
+        <div class="nav-hov">
+          <img src="staremoj.png" alt="" width="60px" class="starlogo" />
+          <div class="icons">
+            <div class="icon-text">
+              <i class="fa-solid fa-house"></i>
+              <p class="para-N">Home</p>
+            </div>
+            <div class="icon-text">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <p class="para-N">Search</p>
+            </div>
+            <div class="icon-text">
+              <i class="fa-solid fa-tv"></i>
+              <p class="para-N">TV</p>
+            </div>
+            <div class="icon-text">
+              <i class="fa-solid fa-cookie"></i>
+              <p class="para-N">Movies</p>
+            </div>
+            <div class="icon-text">
+              <i class="fa-solid fa-person-running"></i>
+              <p class="para-N">Sports</p>
+            </div>
+            <div class="icon-text">
+              <i class="fa-solid fa-video"></i>
+              <p class="para-N">Sparks</p>
+            </div>
+            <div class="icon-text">
+              <i class="fa-solid fa-list"></i>
+              <p class="para-N">Categories</p>
+            </div>
+            <div class="icon-text">
+              <i class="fa-solid fa-circle-user"></i>
+              <p class="para-N">My Space</p>
+            </div>
+          </div>
+        </div>
       </nav>
       <div class="mainbox">
         <div class="sec-1">
@@ -328,13 +405,13 @@
             <b class="comedy">Comedy</b>
             <button class="watch">Watch Now</button>
             <div class="scroll">
-              <img src="sc1.png" alt="" height="40px" class="sc">
-              <img src="sc2.png" alt="" height="40px" class="sc">
-              <img src="sc3.png" alt="" height="40px" class="sc">
-              <img src="sc4.png" alt="" height="40px" class="sc">
-              <img src="sc5.png" alt="" height="40px" class="sc">
-              <img src="sc3.png" alt="" height="40px" class="sc">
-          </div>
+              <img src="sc1.png" alt="" height="40px" class="sc" />
+              <img src="sc2.png" alt="" height="40px" class="sc" />
+              <img src="sc3.png" alt="" height="40px" class="sc" />
+              <img src="sc4.png" alt="" height="40px" class="sc" />
+              <img src="sc5.png" alt="" height="40px" class="sc" />
+              <img src="sc3.png" alt="" height="40px" class="sc" />
+            </div>
           </div>
         </div>
         <!-- section-3  -->
@@ -343,7 +420,7 @@
           <div class="latestR">
             <img src="hs1.png" alt="" height="300px" class="m1" />
             <img src="hs2.png" alt="" height="290px" class="m1" />
-            <img src="hs3.png" alt="" height="290px" class="m1"/>
+            <img src="hs3.png" alt="" height="290px" class="m1" />
             <img src="hs4.png" alt="" height="290px" class="m1" />
             <img src="hs5.png" alt="" height="290px" class="m1" />
             <img src="hs6.png" alt="" height="290px" class="m1" />
@@ -410,25 +487,25 @@
 
           <h5 class="lr">Peacock's Finest</h5>
           <div class="latestR">
-            <img src="pec1.png" alt="" width="200px" class="m2"/>
-            <img src="pec2.png" alt="" width="200px" class="m2"/>
+            <img src="pec1.png" alt="" width="200px" class="m2" />
+            <img src="pec2.png" alt="" width="200px" class="m2" />
             <img src="pec3.png" alt="" width="200px" class="m2" />
-            <img src="pec4.png" alt=""width="200px" class="m2" />
+            <img src="pec4.png" alt="" width="200px" class="m2" />
             <img src="pec5.png" alt="" width="200px" class="m2" />
-            <img src="pec6.png" alt=""width="200px" class="m2" />
-            <img src="pec7.png" alt="" width="200px" class="m2"/>
+            <img src="pec6.png" alt="" width="200px" class="m2" />
+            <img src="pec7.png" alt="" width="200px" class="m2" />
             <img src="pec8.png" alt="" width="200px" class="m2" />
           </div>
           <h5 class="lr">Action Extravanganza</h5>
           <div class="latestR">
             <img src="act1.png" alt="" height="290px" class="m3" />
-            <img src="act2.png" alt="" height="290px"class="m3" />
-            <img src="act3.png" alt="" height="290px"class="m3" />
-            <img src="act4.png" alt="" height="290px" class="m3"/>
-            <img src="act5.png" alt="" height="290px" class="m3"/>
-            <img src="act6.png" alt="" height="290px"class="m3" />
-            <img src="act7.png" alt="" height="290px"class="m3" />
-            <img src="act8.png" alt="" height="290px"class="m3" />
+            <img src="act2.png" alt="" height="290px" class="m3" />
+            <img src="act3.png" alt="" height="290px" class="m3" />
+            <img src="act4.png" alt="" height="290px" class="m3" />
+            <img src="act5.png" alt="" height="290px" class="m3" />
+            <img src="act6.png" alt="" height="290px" class="m3" />
+            <img src="act7.png" alt="" height="290px" class="m3" />
+            <img src="act8.png" alt="" height="290px" class="m3" />
           </div>
           <h5 class="lr">Popular Languages</h5>
           <div class="latestR">
